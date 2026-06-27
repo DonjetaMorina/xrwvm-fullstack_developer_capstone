@@ -8,6 +8,7 @@ from django.contrib.auth import logout
 from django.contrib import messages
 from datetime import datetime
 
+
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 import logging
@@ -36,6 +37,11 @@ def login_user(request):
         # If user is valid, call login method to login current user
         login(request, user)
         data = {"userName": username, "status": "Authenticated"}
+    return JsonResponse(data)
+
+def logout_user(request):
+    logout(request) # Terminate the backend user session
+    data = {"userName": ""} # Return an empty username string
     return JsonResponse(data)
 
 # Create a `logout_request` view to handle sign out request
