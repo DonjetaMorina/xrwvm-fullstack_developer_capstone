@@ -19,7 +19,7 @@ urlpatterns = [
     #register a car
     path(route='get_cars', view=views.get_cars, name='getcars'),
 
-    path(route='get_dealers', view=views.get_dealerships, name='get_dealers'),
+    path(route='get_dealers/', view=views.get_dealerships, name='get_dealers'),
     path(route='get_dealers/<str:state>', view=views.get_dealerships, name='get_dealers_by_state'),
     
     # Dealer details route
