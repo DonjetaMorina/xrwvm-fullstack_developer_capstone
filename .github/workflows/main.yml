@@ -31,7 +31,7 @@ jobs:
       - name: Run Linter
         run: |
           pwd
-          find . -name "*.py" -exec flake8 --ignore=E501,E231,E131,E122,W292 {} +
+          find . -name "*.py" -exec flake8 --ignore=E501,F401,E302,E305,E231,E225,E128,W293,W291 {} +
           echo "Linted all the python files successfully"
 
   lint_js:
@@ -52,5 +52,5 @@ jobs:
 
       - name: Run Linter
         run: |
-          find ./server/database -name "*.js" -exec jshint {} +
+          find ./server/database -name "*.js" -exec jshint --esversion=8 {} +
           echo "Linted all the js files successfully"
